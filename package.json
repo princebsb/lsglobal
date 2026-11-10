@@ -1,0 +1,30 @@
+{
+  "name": "ls-global-assembleias",
+  "version": "0.1.0",
+  "private": true,
+  "description": "LS Global Assembleias — plataforma SaaS multi-tenant para assembleias presenciais, virtuais e híbridas",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "build:shared": "npm run build -w @lsg/shared",
+    "build": "npm run build -w @lsg/shared && npm run build -w @lsg/api && npm run build -w @lsg/web",
+    "typecheck": "npm run build:shared && npm run typecheck -w @lsg/api && npm run typecheck -w @lsg/web",
+    "db:setup": "npm run db:setup -w @lsg/api",
+    "db:migrate": "npm run db:migrate -w @lsg/api",
+    "db:seed": "npm run db:seed -w @lsg/api",
+    "setup": "npm run build:shared && npm run db:setup && npm run db:migrate && npm run db:seed",
+    "dev": "npm run build:shared && concurrently -k -n api,web -c blue,green \"npm run dev -w @lsg/api\" \"npm run dev -w @lsg/web\"",
+    "test": "npm run build:shared && npm run test -w @lsg/shared && npm run test -w @lsg/api",
+    "test:unit": "npm run test -w @lsg/shared",
+    "test:integration": "npm run build:shared && npm run test -w @lsg/api"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "typescript": "5.9.3"
+  }
+}

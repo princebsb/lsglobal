@@ -1,0 +1,13 @@
+node_modules/
+dist/
+coverage/
+.env
+.env.*
+!.env.example
+storage/
+*.log
+.vite/
+.DS_Store
+Thumbs.db
+.certs/
+node_modules_corrompido/

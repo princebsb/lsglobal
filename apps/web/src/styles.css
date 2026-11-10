@@ -1,0 +1,159 @@
+:root {
+  --app-bg: #f4f6fb;
+  --surface: #ffffff;
+  --muted: #5b6475;
+  --brand: #0f2a5c;
+}
+:root[data-theme='dark'] {
+  --app-bg: #0d1117;
+  --surface: #161b22;
+  --muted: #9aa4b2;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+body {
+  background: var(--app-bg);
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 8px;
+  z-index: 1000;
+  background: #fff;
+  color: #0f2a5c;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+.skip-link:focus {
+  left: 8px;
+}
+
+:focus-visible {
+  outline: 3px solid #1f4fbf;
+  outline-offset: 2px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 17px;
+  padding: 18px 20px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 0 16px !important;
+  background: var(--surface) !important;
+  border-bottom: 1px solid rgba(127, 127, 127, 0.15);
+  flex-wrap: wrap;
+  height: auto !important;
+  min-height: 64px;
+}
+
+.app-content {
+  padding: 24px;
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+@media (max-width: 640px) {
+  .app-content {
+    padding: 16px;
+  }
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.login-wrap {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  background: linear-gradient(135deg, #0f2a5c 0%, #1f4fbf 60%, #3b82f6 100%);
+}
+.login-card {
+  width: 100%;
+  max-width: 420px;
+}
+
+.video-placeholder {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  border-radius: 10px;
+  background: repeating-linear-gradient(45deg, #1b2433, #1b2433 12px, #202b3d 12px, #202b3d 24px);
+  color: #cbd5e1;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.vote-option {
+  width: 100%;
+  min-height: 56px;
+  font-size: 18px !important;
+  text-align: left;
+}
+
+.mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  word-break: break-all;
+}
+
+/* Transmissão (LiveKit) */
+.media-stage {
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #111827;
+  display: flex;
+  flex-direction: column;
+}
+.media-grid {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  min-height: 0;
+}
+.media-stage .lk-control-bar {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  flex-wrap: wrap;
+}
+.media-devices {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0 0.75rem 0.75rem;
+}
+.media-devices:empty {
+  display: none;
+}
+.media-waiting {
+  height: 100%;
+  display: grid;
+  place-items: center;
+  color: #cbd5e1;
+}

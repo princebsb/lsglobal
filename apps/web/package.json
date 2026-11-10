@@ -1,0 +1,39 @@
+{
+  "name": "@lsg/web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Front-end React (PWA) — LS Global Assembleias",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -p tsconfig.json --noEmit && vite build",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@ant-design/icons": "5.6.1",
+    "@hookform/resolvers": "5.9.2",
+    "@livekit/components-react": "^2.9.24",
+    "@livekit/components-styles": "^1.2.0",
+    "@lsg/shared": "0.1.0",
+    "@tanstack/react-query": "5.106.0",
+    "antd": "5.29.3",
+    "dayjs": "1.11.23",
+    "livekit-client": "^2.23.0",
+    "papaparse": "5.5.3",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-hook-form": "7.91.0",
+    "react-router-dom": "6.30.6",
+    "socket.io-client": "4.8.4",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@types/papaparse": "5.5.2",
+    "@types/react": "^18.3.23",
+    "@types/react-dom": "^18.3.7",
+    "@vitejs/plugin-react": "4.7.0",
+    "vite": "6.4.5",
+    "vite-plugin-pwa": "1.3.0"
+  }
+}
