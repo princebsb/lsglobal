@@ -90,7 +90,7 @@ systemctl start lsglobal-api
 nginx -t -q && systemctl reload nginx
 
 for i in $(seq 1 30); do
-  if curl -fsS -o /dev/null http://127.0.0.1:3333/api/docs/openapi.json; then echo "DEPLOY_OK"; exit 0; fi
+  if curl -fs -o /dev/null http://127.0.0.1:3333/api/v1/health; then echo "DEPLOY_OK"; exit 0; fi
   sleep 1
 done
 echo "A API não respondeu em 30s:"; journalctl -u lsglobal-api -n 40 --no-pager; exit 1
