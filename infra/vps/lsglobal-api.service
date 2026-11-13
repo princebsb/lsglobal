@@ -1,0 +1,21 @@
+[Unit]
+Description=LS Global Assembleias - API (NestJS)
+After=network-online.target postgresql.service
+Wants=network-online.target
+Requires=postgresql.service
+
+[Service]
+Type=simple
+User=lsg
+Group=lsg
+WorkingDirectory=/opt/lsglobal/app/apps/api
+ExecStart=/usr/bin/node --enable-source-maps dist/main.js
+Restart=always
+RestartSec=3
+NoNewPrivileges=true
+ProtectSystem=full
+PrivateTmp=true
+ReadWritePaths=/opt/lsglobal/storage
+
+[Install]
+WantedBy=multi-user.target
